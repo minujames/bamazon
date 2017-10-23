@@ -50,7 +50,7 @@ function purchaseProduct(id, quantity){
       var stockQuantity = parseInt(res[0].stock_quantity);
       var purchaseQuantity = parseInt(quantity);
       if(stockQuantity < purchaseQuantity){
-        console.log("Insufficient Quantity!");
+        console.log("\nInsufficient Quantity!\n");
         listAllProducts();
       }
       else{

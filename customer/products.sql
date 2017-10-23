@@ -7,9 +7,9 @@ CREATE TABLE products (
   item_id INT NOT NULL AUTO_INCREMENT,
   product_name VARCHAR(100) NOT NULL,
   department_name VARCHAR(100) NOT NULL,
-  price DECIMAL(10,2) NULL,
+  price DECIMAL(10,2) 0,
   product_sales INT 0,
-  stock_quantity INT NULL,
+  stock_quantity INT 0,
 
   PRIMARY KEY (item_id)
 );
