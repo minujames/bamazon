@@ -21,9 +21,9 @@ This app has three user views *Customer*, *Manager* and *Supervisor*
 * node colors package is used to highlight messages
 
 
-[![Customer view](https://github.com/minujames/bamazon/blob/master/videos/customer.mov)](https://github.com/minujames/bamazon/blob/master/videos/customer.mov)
-[![Manager view](https://github.com/minujames/bamazon/blob/master/videos/manager.mov)](https://github.com/minujames/bamazon/blob/master/videos/manager.mov)
-[![Supervisor view](https://github.com/minujames/bamazon/blob/master/videos/supervisor.mov)](https://github.com/minujames/bamazon/blob/master/videos/supervisor.mov)
+* [![Customer view](https://github.com/minujames/bamazon/blob/master/videos/customer.mov)](https://github.com/minujames/bamazon/blob/master/videos/customer.mov)
+* [![Manager view](https://github.com/minujames/bamazon/blob/master/videos/manager.mov)](https://github.com/minujames/bamazon/blob/master/videos/manager.mov)
+* [![Supervisor view](https://github.com/minujames/bamazon/blob/master/videos/supervisor.mov)](https://github.com/minujames/bamazon/blob/master/videos/supervisor.mov)
 
 
 ## Built With
