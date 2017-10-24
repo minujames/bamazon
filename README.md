@@ -23,10 +23,11 @@ This app has three user views *Customer*, *Manager* and *Supervisor*
 ## Built With
 * [JavaScript](https://www.javascript.com/)
 * [Node](https://nodejs.org/en/)
-* [inquirer](https://www.npmjs.com/package/inquirer)
-* [colors](https://www.npmjs.com/package/colors)
-* [mysql](https://www.npmjs.com/package/node-mysql)
-* [console.table](https://www.npmjs.com/package/console.table)
+  * [inquirer](https://www.npmjs.com/package/inquirer)
+  * [colors](https://www.npmjs.com/package/colors)
+  * [mysql](https://www.npmjs.com/package/node-mysql)
+  * [console.table](https://www.npmjs.com/package/console.table)
+* [MySQL](https://www.mysql.com/)
 
 ## Author
 [Minu James](https://minujames.github.io/)
