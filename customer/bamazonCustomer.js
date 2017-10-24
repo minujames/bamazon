@@ -85,6 +85,7 @@ function purchaseProduct(id, quantity){
       var stockQuantity = parseInt(res[0].stock_quantity);
       var productName = res[0].product_name;
       var unitPrice = parseFloat(res[0].price);
+      var productSales = parseInt(res[0].product_sales);
 
       var purchaseQuantity = parseInt(quantity);
 
@@ -97,7 +98,7 @@ function purchaseProduct(id, quantity){
         [
         {
           stock_quantity: stockQuantity - purchaseQuantity,
-          product_sales: purchaseQuantity
+          product_sales: productSales + purchaseQuantity
         }, 
         {
           item_id: id
