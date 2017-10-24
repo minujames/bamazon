@@ -13,7 +13,6 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err){
   if (err) throw err;
-  console.log("connected as id " + connection.threadId);
 
   displayOptions();
 });
@@ -78,10 +77,26 @@ function addToInventory(){
   {
     name: "id",
     message: "Item ID to add more?",
+    validate: function(value) {
+      var numberPattern = new RegExp("^[0-9]+$");
+
+      if(numberPattern.test(value)){
+        return true;
+      }
+      return false;
+    }
   },
   {
     name: "addQuantity",
     message: "How many?",
+    validate: function(value) {
+      var numberPattern = new RegExp("^[0-9]+$");
+      
+      if(numberPattern.test(value)){
+        return true;
+      }
+      return false;
+    }
   }
   ]).then(function(input){
     updateProductInventory(input.id, input.addQuantity);
@@ -91,11 +106,17 @@ function addToInventory(){
 function updateProductInventory(id, quantity){
   var query = connection.query("UPDATE products SET stock_quantity = stock_quantity + ? WHERE item_id = ?",
     [
-      quantity, id
+    quantity, id
     ], function(err, res) {
-    if (err) throw err;
+      if (err) throw err;
 
-    console.log("\nAdded", quantity, "units to product with id:", id, "\n");
+    if(res.affectedRows === 0){
+      console.log(colors.red.bold("\n There is no product in bamazon with id", id,"\n"));
+    }
+    else{
+      console.log(colors.green.bold("\nAdded", quantity, "units to product with id:", id, "\n"));
+    }
+
     displayOptions();
   });
 }
@@ -129,10 +150,26 @@ function addNewProduct(departments){
   {
     name: "unitPrice",
     message: "Unit Price?",
+    validate: function(value) {
+      var decimalPattern = new RegExp("^[0-9]{1,10}(\.[0-9]{1,2})?$");
+
+      if(decimalPattern.test(value)){
+        return true;
+      }
+      return false;
+    }  
   },
   {
     name: "quantity",
     message: "Stock Quantity?",
+    validate: function(value) {
+      var numberPattern = new RegExp("^[0-9]+$");
+
+      if(numberPattern.test(value)){
+        return true;
+      }
+      return false;
+    }
   }
   ]).then(function(input){
     insertNewProduct(input.name, input.department, input.unitPrice, input.quantity);
@@ -141,15 +178,15 @@ function addNewProduct(departments){
 
 function insertNewProduct(name, department, unitPrice, stockQuantity){
   var query = connection.query("INSERT INTO products SET ?",
-    {
-      product_name: name,
-      department_name: department,
-      price: unitPrice,
-      stock_quantity: stockQuantity
-    },function(err, res) {
+  {
+    product_name: name,
+    department_name: department,
+    price: unitPrice,
+    stock_quantity: stockQuantity
+  },function(err, res) {
     if (err) throw err;
 
-    console.log("\nitem '", name, "' added to department '", department, "'\n");
+    console.log(colors.green.bold("\nitem '" + name + "' added to department '"+ department+ "'\n"));
     displayOptions();
   });
 }
