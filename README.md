@@ -1,12 +1,9 @@
 # bamazon - node mysql app
 This is a command line node app for Amazon-like storefront with MySQL as backend.
-This app has three user views
-* User
-* Manager
-* Supervisor
+This app has three user views *Customer*, *Manager* and *Supervisor*
 
 ### Features
-* User
+* Customer
   * The app will take in orders from customers and deplete stock from the store's inventory
   * If item stock is less than the purchase quantity specified, an insufficient quantity message is shown to the customer.
   * After successful purchase the total cost of their purchase is shown to the customer.
