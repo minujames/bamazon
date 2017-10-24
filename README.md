@@ -20,6 +20,10 @@ This app has three user views *Customer*, *Manager* and *Supervisor*
 * node console.table package is used to display the database tables to console
 * node colors package is used to highlight messages
 
+
+![Customer view](https://github.com/minujames/bamazon/blob/master/videos/customer.mov)
+
+
 ## Built With
 * [JavaScript](https://www.javascript.com/)
 * [Node](https://nodejs.org/en/)
