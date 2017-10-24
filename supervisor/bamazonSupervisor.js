@@ -90,7 +90,15 @@ function addNewDepartment(){
   },
   {
     message: "Overhead cost of the department?",
-    name: "overheadCost"
+    name: "overheadCost",
+    validate: function(value) {
+      var numberPattern = new RegExp("^[0-9]+$");
+
+      if(numberPattern.test(value)){
+        return true;
+      }
+      return false;
+    }
   }
   ]).then(function(input){
     insertNewDepartment(input.name, input.overheadCost);
@@ -105,7 +113,7 @@ function insertNewDepartment(name, overheadCost){
   },function(err, res) {
     if (err) throw err;
 
-    console.log("\n","New department '"+ name +"' added to bamazon!!", "\n");
+    console.log(colors.green.bold("\n","New department '"+ name +"' added to bamazon!!", "\n"));
     displayOptions();
   });
 }
